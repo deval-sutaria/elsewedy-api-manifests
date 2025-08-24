@@ -4,7 +4,7 @@ metadata:
   name: ecatalog-api
   namespace: elsewedy-app
   annotations:
-    reloader.stakater.com/auto: "false"
+    reloader.stakater.com/auto: "true"
     reloader.stakater.com/configmap: "ecatalog-config,ecatalog-appsettings"
     reloader.stakater.com/secret: "ecatalog-secret"
 spec:
