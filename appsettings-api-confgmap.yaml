@@ -1,0 +1,40 @@
+#This config map will be used by API server 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecatalog-appsettings
+  namespace: elsewedy-app
+data:
+  appsettings.json: |
+    {
+      "ConnectionStrings": {
+        "ECatalogConnectionString": "Server=10.76.0.3,1433;Database=ecatalogdb;User Id=sqlserver;Password=YourStrong@Passw0rd;TrustServerCertificate=True;MultipleActiveResultSets=true"
+      },
+      "SystemSettings": {
+        "DefaultStoreId": "1"
+      },
+      "EmailSettings": {
+        "FromAddress": "info@Xyris.com",
+        "ApiKey": "",
+        "FromName": "MM"
+      },
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*",
+      "Authentication": {
+        "Jwt": {
+          "Secret": "ECatalog@Xyris.com",
+          "Issuer": "ECatalog.NetCore.Service",
+          "Audience": "ECatalog.NetCore.ClientApp",
+          "Subject": "ECatalog.NetCore.ClientAccess"
+        },
+        "Google": {
+          "ClientId": "rwsddd44555",
+          "ClientSecret": "ffgh54545"
+        }
+      }
+    }

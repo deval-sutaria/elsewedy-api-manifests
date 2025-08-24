@@ -1,0 +1,154 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecatalog-config
+  namespace: elsewedy-app
+data:
+  #Frontend Related
+  NODE_ENV: development
+  NODE_OPTIONS: --max-old-space-size=3072
+  API_URL: http://ecatalog-api:80
+  BASE_URL: http://localhost:3228
+  NITRO_HOST: 0.0.0.0
+  NITRO_PORT: "3228"
+  NITRO_PRESET: node_cluster
+  NUXT_PUBLIC_API_URL: http://ecatalog-api:80
+  NUXT_PUBLIC_BASE_URL: http://localhost:3228
+  NUXT_I18N_DETECT_BROWSER_LANGUAGE: "true"
+  NUXT_I18N_DEFAULT_LOCALE: en
+  NUXT_I18N_FALLBACK_LOCALE: en
+  NUXT_IMAGE_PROVIDER: ipx
+  NUXT_IMAGE_IPX_MAX_AGE: "604800"
+  NUXT_DEVTOOLS_ENABLED: "false"
+  NUXT_SSR: "false"
+  NUXT_LOG_LEVEL: info
+  NUXT_SECURITY_HEADERS: "true"
+  NUXT_SECURITY_HEADERS_CROSS_ORIGIN_EMBEDDER_POLICY: require-corp
+  NUXT_SECURITY_HEADERS_CROSS_ORIGIN_OPENER_POLICY: same-origin
+  NUXT_SECURITY_HEADERS_CROSS_ORIGIN_RESOURCE_POLICY: same-origin
+  NUXT_SECURITY_HEADERS_ORIGIN_AGENT_CLUSTER: "?1"
+  NUXT_SECURITY_HEADERS_REFERRER_POLICY: no-referrer
+  NUXT_SECURITY_HEADERS_X_CONTENT_TYPE_OPTIONS: nosniff
+  NUXT_SECURITY_HEADERS_X_DNS_PREFETCH_CONTROL: "off"
+  NUXT_SECURITY_HEADERS_X_DOWNLOAD_OPTIONS: noopen
+  NUXT_SECURITY_HEADERS_X_FRAME_OPTIONS: SAMEORIGIN
+  NUXT_SECURITY_HEADERS_X_PERMITTED_CROSS_DOMAIN_POLICIES: none
+  NUXT_SECURITY_HEADERS_X_XSS_PROTECTION: "0"
+  NUXT_COMPRESS_PUBLIC_ASSETS: "true"
+  NUXT_COMPRESS_GZIP: "true"
+  NUXT_COMPRESS_BROTLI: "true"
+  NUXT_TAILWIND_CSS_PATH: ~/assets/css/main.css
+  NUXT_VEEVALIDATE_COMPONENT_NAMES_FORM: VeeForm
+  NUXT_VEEVALIDATE_COMPONENT_NAMES_FIELD: VeeField
+  NUXT_VEEVALIDATE_COMPONENT_NAMES_ERROR_MESSAGE: VeeErrorMessage
+  NUXT_SNACKBAR_BOTTOM: "true"
+  NUXT_SNACKBAR_RIGHT: "true"
+  NUXT_SNACKBAR_DURATION: "5000"
+  
+    ###########################################################################
+
+
+
+
+    #API related
+  ASPNETCORE_ENVIRONMENT: "Production"
+  ASPNETCORE_URLS: "http://+:80"
+  ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+  ASPNETCORE_HTTPLOGGING_ENABLED: "true"
+
+  ConnectionStrings__DataProvider: "sqlserver"
+  ConnectionStrings__SQLCommandTimeout: "30"
+
+  DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+  DOTNET_SYSTEM_GLOBALIZATION_PREDEFINED_CULTURES_ONLY: "false"
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+
+  CacheConfig__DefaultCacheTime: "60"
+  CacheConfig__ShortTermCacheTime: "3"
+  CacheConfig__BundledFilesCacheTime: "120"
+
+  CommonConfig__DisplayFullErrorStack: "false"
+  CommonConfig__UseSessionStateTempDataProvider: "false"
+  CommonConfig__MiniProfilerEnabled: "false"
+  CommonConfig__StaticFilesCacheControl: "public,max-age=31536000"
+  CommonConfig__ServeUnknownFileTypes: "false"
+  CommonConfig__UseAutofac: "true"
+
+  DistributedCacheConfig__DistributedCacheType: "redis"
+  DistributedCacheConfig__Enabled: "false"
+
+  HostingConfig__UseProxy: "false"
+
+  PluginConfig__UseUnsafeLoadAssembly: "true"
+
+  WebOptimizer__EnableJavaScriptBundling: "true"
+  WebOptimizer__EnableCssBundling: "true"
+  WebOptimizer__EnableMemoryCache: "true"
+  WebOptimizer__EnableDiskCache: "true"
+  WebOptimizer__HttpsCompression: "2"
+
+  AzureBlobConfig__ContainerName: ""
+  AzureBlobConfig__EndPoint: ""
+  AzureBlobConfig__AppendContainerName: "true"
+  AzureBlobConfig__StoreDataProtectionKeys: "false"
+
+  Logging__LogLevel__Default: "Information"
+  Logging__LogLevel__Microsoft: "Warning"
+  Logging__LogLevel__Microsoft.Hosting.Lifetime: "Information"
+
+  DataProtection__ApplicationDiscriminator: "ECatalogAPI"
+  ###############################################################################################
+
+
+  #nop.web related:
+  ASPNETCORE_ENVIRONMENT: "Production"
+  ASPNETCORE_URLS: "http://+:80;https://+:443"
+  ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+  ASPNETCORE_HTTPLOGGING_ENABLED: "true"
+
+  ConnectionStrings__DataProvider: "sqlserver"
+  ConnectionStrings__SQLCommandTimeout: "30"
+
+  DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+  DOTNET_SYSTEM_GLOBALIZATION_PREDEFINED_CULTURES_ONLY: "false"
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+
+  CacheConfig__DefaultCacheTime: "30"
+  CacheConfig__ShortTermCacheTime: "0"
+  CacheConfig__BundledFilesCacheTime: "120"
+
+  CommonConfig__DisplayFullErrorStack: "false"
+  CommonConfig__UseSessionStateTempDataProvider: "false"
+  CommonConfig__MiniProfilerEnabled: "false"
+  CommonConfig__StaticFilesCacheControl: "public,max-age=31536000"
+  CommonConfig__ServeUnknownFileTypes: "false"
+  CommonConfig__UseAutofac: "true"
+
+  DistributedCacheConfig__DistributedCacheType: "redis"
+  DistributedCacheConfig__Enabled: "false"
+
+  HostingConfig__UseProxy: "false"
+
+  InstallationConfig__DisableSampleData: "false"
+  InstallationConfig__InstallRegionalResources: "true"
+
+  PluginConfig__UseUnsafeLoadAssembly: "true"
+
+  WebOptimizer__EnableJavaScriptBundling: "true"
+  WebOptimizer__EnableCssBundling: "true"
+  WebOptimizer__EnableMemoryCache: "true"
+  WebOptimizer__EnableDiskCache: "true"
+  WebOptimizer__HttpsCompression: "2"
+
+  AzureBlobConfig__ContainerName: ""
+  AzureBlobConfig__EndPoint: ""
+  AzureBlobConfig__AppendContainerName: "true"
+  AzureBlobConfig__StoreDataProtectionKeys: "false"
+
+  Logging__LogLevel__Default: "Information"
+  Logging__LogLevel__Microsoft: "Warning"
+  Logging__LogLevel__Microsoft.Hosting.Lifetime: "Information"
+
+  DataProtection__ApplicationDiscriminator: "NopWeb"

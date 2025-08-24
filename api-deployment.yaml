@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecatalog-api
+  namespace: elsewedy-app
+  annotations:
+    reloader.stakater.com/auto: "false"
+    reloader.stakater.com/configmap: "ecatalog-config,ecatalog-appsettings"
+    reloader.stakater.com/secret: "ecatalog-secret"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ecatalog-api
+  template:
+    metadata:
+      labels:
+        app: ecatalog-api
+    spec:
+      serviceAccountName: api-ksa
+      securityContext:
+       runAsUser: 1001
+       runAsGroup: 1001
+       fsGroup: 1001
+      containers:
+      - name: ecatalog-api
+        image: europe-west1-docker.pkg.dev/poc-elsewedy-0825/elsewedy-repo-elsewedy/api:1638ef2
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_URLS
+          value: "http://+:80"
+        envFrom:
+        - configMapRef:
+            name: ecatalog-config
+        - secretRef:
+            name: ecatalog-secret
+        volumeMounts:
+        - name: ecatalog-api-storage
+          mountPath: /app/App_Data
+        - name: appsettings-volume
+          mountPath: /app/App_Data/appsettings.json
+          subPath: appsettings.json
+      volumes:
+      - name: ecatalog-api-storage
+        persistentVolumeClaim:
+          claimName: ecatalog-api-pvc
+      - name: appsettings-volume
+        configMap:
+          name: ecatalog-appsettings
