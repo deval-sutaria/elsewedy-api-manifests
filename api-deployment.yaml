@@ -24,7 +24,7 @@ spec:
        fsGroup: 1001
       containers:
       - name: ecatalog-api
-        image: europe-west1-docker.pkg.dev/poc-elsewedy-0825/elsewedy-repo-elsewedy/api:b1f9b5a
+        image: europe-west1-docker.pkg.dev/poc-elsewedy-0825/elsewedy-repo-elsewedy/api:ca26e5d
         ports:
         - containerPort: 80
         env:
