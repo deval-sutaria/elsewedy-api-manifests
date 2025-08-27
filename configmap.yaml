@@ -5,8 +5,7 @@ metadata:
   namespace: elsewedy-app
 data:
   #Frontend Related
-  NODE_ENV: development
-  NODE_OPTIONS: --max-old-space-size=3072
+  NODE_OPTIONS: --max-old-space-size=4096 --trace-warnings
   API_URL: http://ecatalog-api:80
   BASE_URL: http://localhost:3228
   NITRO_HOST: 0.0.0.0
@@ -15,7 +14,7 @@ data:
   NUXT_PUBLIC_CLIENT_ID: A607E826-C330-41FF-925E-95BF9B6EF793
   NUXT_PUBLIC_CLIENT_SECRET: 2D6AB8A9-B337-4AE3-8F42-D5FD82A1FEED
   NUXT_PUBLIC_API_URL: http://34.78.217.3
-  NUXT_PUBLIC_BASE_URL: http://localhost:3228
+  NUXT_PUBLIC_BASE_URL: http://34.140.158.138:3228
   NUXT_I18N_DETECT_BROWSER_LANGUAGE: "true"
   NUXT_I18N_DEFAULT_LOCALE: en
   NUXT_I18N_FALLBACK_LOCALE: en
@@ -23,7 +22,10 @@ data:
   NUXT_IMAGE_IPX_MAX_AGE: "604800"
   NUXT_DEVTOOLS_ENABLED: "false"
   NUXT_SSR: "false"
-  NUXT_LOG_LEVEL: info
+    #NUXT_LOG_LEVEL: info
+  NUXT_PUBLIC_LOG_LEVEL: debug
+  NITRO_LOG_LEVEL: debug
+  NODE_ENV: production
   NUXT_SECURITY_HEADERS: "true"
   NUXT_SECURITY_HEADERS_CROSS_ORIGIN_EMBEDDER_POLICY: require-corp
   NUXT_SECURITY_HEADERS_CROSS_ORIGIN_OPENER_POLICY: same-origin
