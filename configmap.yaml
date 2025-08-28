@@ -5,6 +5,7 @@ metadata:
   namespace: elsewedy-app
 data:
   #Frontend Related
+  DEVAL_TEST: devaltest
   NODE_OPTIONS: --max-old-space-size=4096 --trace-warnings
   API_URL: http://ecatalog-api:80
   BASE_URL: http://localhost:3228
